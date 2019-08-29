@@ -1,0 +1,604 @@
+{
+	"info": {
+		"_postman_id": "7373657c-108c-7925-8ae2-4ae9b9c7aede",
+		"name": "IG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Watchlists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IG-API-KEY",
+								"value": "{{apikey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "X-SECURITY-TOKEN",
+								"value": "{{XSecurity}}",
+								"type": "text"
+							},
+							{
+								"key": "CST",
+								"value": "{{CST}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/deal/watchlists",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"deal",
+								"watchlists"
+							]
+						},
+						"description": "Return a list of watch lists that you have in your account"
+					},
+					"response": []
+				},
+				{
+					"name": "Account List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IG-API-KEY",
+								"value": "{{apikey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "X-SECURITY-TOKEN",
+								"type": "text",
+								"value": "{{XSecurity}}"
+							},
+							{
+								"key": "CST",
+								"type": "text",
+								"value": "{{CST}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/deal/accounts",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"deal",
+								"accounts"
+							]
+						},
+						"description": "Return the list of accounts you have (normally demo and prod)"
+					},
+					"response": []
+				},
+				{
+					"name": "Account Preferences",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IG-API-KEY",
+								"value": "{{apikey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "X-SECURITY-TOKEN",
+								"type": "text",
+								"value": "{{XSecurity}}"
+							},
+							{
+								"key": "CST",
+								"type": "text",
+								"value": "{{CST}}"
+							},
+							{
+								"key": "Version",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/deal/accounts/preferences",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"deal",
+								"accounts",
+								"preferences"
+							]
+						},
+						"description": "Account prefs"
+					},
+					"response": []
+				},
+				{
+					"name": "Account History Transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IG-API-KEY",
+								"value": "{{apikey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "X-SECURITY-TOKEN",
+								"type": "text",
+								"value": "{{XSecurity}}"
+							},
+							{
+								"key": "CST",
+								"type": "text",
+								"value": "{{CST}}"
+							},
+							{
+								"key": "Version",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/deal/history/transactions?type=ALL&from=2019-08-20T00:00:00&to=2019-08-29T00:00:00",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"deal",
+								"history",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "ALL",
+									"description": "ALL, ALL_DEAL, DEPOSIT or WITHDRAWAL"
+								},
+								{
+									"key": "from",
+									"value": "2019-08-20T00:00:00",
+									"description": "UTC Date Time format"
+								},
+								{
+									"key": "to",
+									"value": "2019-08-29T00:00:00",
+									"description": "UTC Date Time format"
+								}
+							]
+						},
+						"description": "Logs into an IG session.\nreturns the CST which you need to use in further requests"
+					},
+					"response": []
+				},
+				{
+					"name": "Account Activity",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IG-API-KEY",
+								"value": "{{apikey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "X-SECURITY-TOKEN",
+								"type": "text",
+								"value": "{{XSecurity}}"
+							},
+							{
+								"key": "CST",
+								"type": "text",
+								"value": "{{CST}}"
+							},
+							{
+								"key": "Version",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/deal/history/activity?from=2019-01-01T00:00:00&to=2019-08-29T00:00:00&pageNumber=25&pageSize=100",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"deal",
+								"history",
+								"activity"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2019-01-01T00:00:00",
+									"description": "UTC Date Time format"
+								},
+								{
+									"key": "to",
+									"value": "2019-08-29T00:00:00",
+									"description": "UTC Date Time format"
+								},
+								{
+									"key": "pageNumber",
+									"value": "25"
+								},
+								{
+									"key": "pageSize",
+									"value": "100"
+								}
+							]
+						},
+						"description": "Get the account activity, note at the end is the request is the metadata which tells you have many pages there are. you can optionally supply a page number and a page size to get to different parts of the result set."
+					},
+					"response": []
+				},
+				{
+					"name": "Open Positions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IG-API-KEY",
+								"value": "{{apikey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "X-SECURITY-TOKEN",
+								"type": "text",
+								"value": "{{XSecurity}}"
+							},
+							{
+								"key": "CST",
+								"type": "text",
+								"value": "{{CST}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/deal/positions",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"deal",
+								"positions"
+							]
+						},
+						"description": "Logs into an IG session.\nreturns the CST which you need to use in further requests"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Markets",
+			"item": [
+				{
+					"name": "Markets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IG-API-KEY",
+								"value": "{{apikey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "X-SECURITY-TOKEN",
+								"value": "{{XSecurity}}",
+								"type": "text"
+							},
+							{
+								"key": "CST",
+								"value": "{{CST}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/deal/markets?searchTerm=GBPUSD",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"deal",
+								"markets"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "GBPUSD"
+								}
+							]
+						},
+						"description": "## NOTES\n\nNote the **epic** as part of the result which identifies the market, this is used to query market data in other requests"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prices",
+			"item": [
+				{
+					"name": "Get Prices For Market",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IG-API-KEY",
+								"value": "{{apikey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json; charset=UTF-8"
+							},
+							{
+								"key": "X-SECURITY-TOKEN",
+								"value": "{{XSecurity}}",
+								"type": "text"
+							},
+							{
+								"key": "CST",
+								"value": "{{CST}}",
+								"type": "text"
+							},
+							{
+								"key": "Version",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/deal/prices/CS.D.GBPUSD.TODAY.IP/MINUTE?startdate=2019:08:01-00:00:00&enddate=2019:08:02-00:00:00",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"deal",
+								"prices",
+								"CS.D.GBPUSD.TODAY.IP",
+								"MINUTE"
+							],
+							"query": [
+								{
+									"key": "startdate",
+									"value": "2019:08:01-00:00:00"
+								},
+								{
+									"key": "enddate",
+									"value": "2019:08:02-00:00:00"
+								}
+							]
+						},
+						"description": "## NOTES\n\nNote the **epic** as part of the path describing the market we are interested in."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12309bf6-fa8a-423c-9613-7a8260fac0f6",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"console.log('*** Json Data Returned From Call');",
+							"console.log(jsonData);",
+							"",
+							"postman.setGlobalVariable(\"token\", jsonData.token);",
+							"postman.setGlobalVariable(\"CST\",postman.getResponseHeader(\"CST\") );",
+							"postman.setGlobalVariable(\"XSecurity\",postman.getResponseHeader(\"X-SECURITY-TOKEN\") );"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-IG-API-KEY",
+						"value": "{{apikey}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8"
+					},
+					{
+						"key": "Version",
+						"type": "text",
+						"value": "2"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identifier\": \"{{apiusername}}\",\n    \"password\": \"{{apipassword}}\",\n    \"encryptedPassword\": null\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}/deal/session",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"deal",
+						"session"
+					]
+				},
+				"description": "Logs into an IG session.\n\nBody contains the api key, username and password all set from the environment so you need to set these before anything else.\nopen console to get log messages"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-IG-API-KEY",
+						"value": "{{apikey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=UTF-8"
+					},
+					{
+						"key": "CST",
+						"value": "{{CST}}"
+					},
+					{
+						"key": "X-SECURITY-TOKEN",
+						"value": "{{XSecurity}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://demo-api.ig.com/gateway/deal/session",
+					"protocol": "https",
+					"host": [
+						"demo-api",
+						"ig",
+						"com"
+					],
+					"path": [
+						"gateway",
+						"deal",
+						"session"
+					]
+				},
+				"description": "Logs out of an IG session"
+			},
+			"response": []
+		}
+	]
+}
